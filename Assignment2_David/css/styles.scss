@@ -1,0 +1,30 @@
+body {
+  background-color: #f1e7cb;
+  background-image: url(../images/oldpaper.jpg);
+}
+
+header {
+  text-align: center;
+}
+main {
+  .gallery {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .carousel-inner {
+    .carousel-item {
+      background-color: #fff;
+      .carousel-caption {
+        background-color: #ffffffc2;
+      }
+      img.d-block {
+        height: 600px;
+      }
+    }
+  }
+}
