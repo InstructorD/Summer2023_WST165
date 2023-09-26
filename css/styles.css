@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+header {
+  padding: 15px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  min-height: calc(100vh - 170px);
+  background-image: url(../images/pexels-andreea-ch-1166644.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+main ul {
+  list-style-type: none;
+  background-color: #172d4d;
+  color: #fff;
+  padding: 20px;
+  width: 400px;
+  margin: auto;
+}
+main ul li {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main ul li img {
+  display: block;
+}
+main ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 40px;
+  font-size: 2em;
+  display: block;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}/*# sourceMappingURL=styles.css.map */
