@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="./css/javascript.css" />
+  </head>
+  <body>
+    <header>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <div class="nav-header">
+          <div class="logo">
+            <h1>MUGU</h1>
+          </div>
+          <div class="close-btn">&times;</div>
+        </div>
+
+        <ul>
+          <li><a href="vanilla.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="shop">
+            <a>Shop</a>
+            <ul class="dropdown">
+              <li><a href="gummies.html">Gummies</a></li>
+              <li><a href="powders.html">Powders</a></li>
+              <li><a href="recipes.html">Recipes</a></li>
+            </ul>
+          </li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <script>
+      let hamburgerBtn = document.querySelector('.hamburger');
+      let closeBtn = document.querySelector('.close-btn');
+      let shopBtn = document.querySelector('.shop');
+
+      hamburgerBtn.addEventListener('click', function () {
+        hamburgerBtn.classList.add('open');
+      });
+      closeBtn.addEventListener('click', function () {
+        hamburgerBtn.classList.remove('open');
+      });
+
+      shopBtn.addEventListener('click', function () {
+        if (shopBtn.classList.contains('open')) {
+          shopBtn.classList.remove('open');
+        } else {
+          shopBtn.classList.add('open');
+        }
+      });
+    </script>
+  </body>
+</html>
