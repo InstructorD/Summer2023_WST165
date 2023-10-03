@@ -86,15 +86,43 @@ header nav ul #checkbox2:checked ~ .dropdown {
   max-height: 500px;
   overflow: hidden;
 }
-header nav ul .shop label::after {
+header nav ul #checkbox2:checked ~ .dropdown::before {
   content: "";
-  background: url("../down.svg");
-  width: 50px;
-  height: 40px;
-  background-color: green;
+  background: url("../up.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 15px;
   display: inline-block;
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  pointer-events: none;
+}
+header nav ul .shop {
+  position: relative;
+}
+header nav ul .shop label a {
+  width: 100px;
+  display: block;
 }
 header nav ul .shop .dropdown {
   max-height: 0;
+  transition: max-height 0.3s;
   overflow: hidden;
+  display: inline-block;
+  background-color: rgb(217, 231, 238);
+}
+header nav ul .shop .dropdown::before {
+  content: "";
+  background: url("../down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  pointer-events: none;
 }/*# sourceMappingURL=vanilla.css.map */
