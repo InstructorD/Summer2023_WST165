@@ -11,20 +11,22 @@ html {
 
 header {
   padding: 20px;
-  button.hamburger {
+  label.hamburger {
+    position: relative;
+    z-index: 100;
+    left: 0;
+    transition: left 0.3s;
     cursor: pointer;
-    background-color: rgba(200, 200, 200, 0.388);
-    border: none;
-    padding: 8px;
+    div.button {
+      background-color: rgba(200, 200, 200, 0.388);
+      border: none;
+      padding: 8px;
+      max-width: 56px;
+    }
     &:hover {
       background-color: rgba(80, 80, 80, 0.536);
       span {
         background-color: #fff;
-      }
-    }
-    &:focus {
-      ~ nav {
-        left: 0;
       }
     }
     span {
@@ -38,6 +40,20 @@ header {
       }
     }
   }
+
+  #checkbox {
+    display: none;
+    &:checked {
+      ~ nav {
+        left: 0;
+      }
+      ~ label.hamburger {
+        position: absolute;
+        left: 400px;
+      }
+    }
+  }
+
   nav {
     width: 500px;
     max-width: 100%;
@@ -46,7 +62,7 @@ header {
     top: 0;
     left: -500px;
     height: 100vh;
-    transition: left 0.3s 0.3s;
+    transition: left 0.3s;
     div.logo {
       padding: 20px;
       font-size: 3em;
@@ -64,13 +80,24 @@ header {
           font-size: 1.5em;
         }
       }
-      .shop {
-        &:hover {
-          .dropdown {
+      #checkbox2 {
+        display: none;
+        &:checked {
+          ~ .dropdown {
             padding: 5px;
             max-height: 500px;
             overflow: hidden;
           }
+        }
+      }
+      .shop {
+        label::after {
+          content: '';
+          background: url('../down.svg');
+          width: 50px;
+          height: 40px;
+          background-color: green;
+          display: inline-block;
         }
         .dropdown {
           max-height: 0;

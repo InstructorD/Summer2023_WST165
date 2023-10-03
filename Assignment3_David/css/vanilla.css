@@ -12,30 +12,44 @@ html {
 header {
   padding: 20px;
 }
-header button.hamburger {
+header label.hamburger {
+  position: relative;
+  z-index: 100;
+  left: 0;
+  transition: left 0.3s;
   cursor: pointer;
+}
+header label.hamburger div.button {
   background-color: rgba(200, 200, 200, 0.388);
   border: none;
   padding: 8px;
+  max-width: 56px;
 }
-header button.hamburger:hover {
+header label.hamburger:hover {
   background-color: rgba(80, 80, 80, 0.536);
 }
-header button.hamburger:hover span {
+header label.hamburger:hover span {
   background-color: #fff;
 }
-header button.hamburger:focus ~ nav {
-  left: 0;
-}
-header button.hamburger span {
+header label.hamburger span {
   display: block;
   margin-bottom: 8px;
   height: 3px;
   width: 40px;
   background-color: #000;
 }
-header button.hamburger span:last-child {
+header label.hamburger span:last-child {
   margin-bottom: 0;
+}
+header #checkbox {
+  display: none;
+}
+header #checkbox:checked ~ nav {
+  left: 0;
+}
+header #checkbox:checked ~ label.hamburger {
+  position: absolute;
+  left: 400px;
 }
 header nav {
   width: 500px;
@@ -45,7 +59,7 @@ header nav {
   top: 0;
   left: -500px;
   height: 100vh;
-  transition: left 0.3s 0.3s;
+  transition: left 0.3s;
 }
 header nav div.logo {
   padding: 20px;
@@ -64,10 +78,21 @@ header nav ul li a {
   color: #222;
   font-size: 1.5em;
 }
-header nav ul .shop:hover .dropdown {
+header nav ul #checkbox2 {
+  display: none;
+}
+header nav ul #checkbox2:checked ~ .dropdown {
   padding: 5px;
   max-height: 500px;
   overflow: hidden;
+}
+header nav ul .shop label::after {
+  content: "";
+  background: url("../down.svg");
+  width: 50px;
+  height: 40px;
+  background-color: green;
+  display: inline-block;
 }
 header nav ul .shop .dropdown {
   max-height: 0;
