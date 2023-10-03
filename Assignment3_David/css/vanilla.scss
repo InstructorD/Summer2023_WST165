@@ -50,6 +50,20 @@ header {
       ~ label.hamburger {
         position: absolute;
         left: 400px;
+        span:nth-child(1) {
+          transform: rotateZ(45deg);
+          position: relative;
+          top: 11px;
+        }
+        span:nth-child(2) {
+          transform: translateX(200px);
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotateZ(-45deg);
+          position: relative;
+          top: -11px;
+        }
       }
     }
   }

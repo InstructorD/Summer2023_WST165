@@ -51,6 +51,20 @@ header #checkbox:checked ~ label.hamburger {
   position: absolute;
   left: 400px;
 }
+header #checkbox:checked ~ label.hamburger span:nth-child(1) {
+  transform: rotateZ(45deg);
+  position: relative;
+  top: 11px;
+}
+header #checkbox:checked ~ label.hamburger span:nth-child(2) {
+  transform: translateX(200px);
+  opacity: 0;
+}
+header #checkbox:checked ~ label.hamburger span:nth-child(3) {
+  transform: rotateZ(-45deg);
+  position: relative;
+  top: -11px;
+}
 header nav {
   width: 500px;
   max-width: 100%;
