@@ -5,11 +5,15 @@
   box-sizing: border-box;
 }
 html {
+  height: 100%;
   font-family: inter, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
 }
 
 header {
   padding: 20px;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
   label.hamburger {
     position: relative;
     z-index: 100;
@@ -71,7 +75,7 @@ header {
     width: 500px;
     max-width: 100%;
     background-color: rgb(205, 216, 222);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -500px;
     height: 100vh;
@@ -166,6 +170,7 @@ button {
   border-radius: 5px;
   font-size: 1.2em;
   font-weight: bold;
+  animation: shadow 1s 0s infinite ease-in-out alternate;
   cursor: pointer;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
   &:hover {
@@ -177,10 +182,8 @@ button {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
   div.hero {
+    animation: moveUpandDown 2s 0s infinite ease-in-out alternate;
     background: linear-gradient(
         0deg,
         rgba(255, 255, 255, 1) 0%,
@@ -217,7 +220,27 @@ main {
     }
   }
   div.section2 {
-    grid-column: span 2;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+    text-align: center;
+    .product-image {
+      width: 300px;
+    }
+    .stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      strong {
+        padding: 20px;
+      }
+      img {
+        width: 25px;
+      }
+    }
+  }
+  div.section3 {
     background-color: #eff9ff;
     padding: 20px;
     @media screen and (max-width: 900px) {
@@ -233,21 +256,17 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 30px;
-      @media screen and (max-width: 900px) {
-        grid-template-columns: 1fr;
-      }
       div {
         text-align: center;
         img {
-          height: 120px;
+          height: 100px;
           padding: 20px;
         }
       }
     }
   }
-  div.section3 {
+  div.section4 {
     text-align: center;
-    grid-column: span 2;
     padding: 20px;
     @media screen and (max-width: 900px) {
       grid-column: span 1;
@@ -292,4 +311,22 @@ footer {
   padding: 20px;
   color: #fff;
   width: 100%;
+}
+
+@keyframes moveUpandDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: scale(102%);
+    box-shadow: 3px 4px 5px #00000089;
+  }
+  100% {
+    box-shadow: 1px 1px 0px #000000b8;
+  }
 }
